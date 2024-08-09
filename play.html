@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Robot Turtles</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script src="game.js"></script>
+</head>
+
+<body class="w3-animate-opacity">
+
+<div id="logoBar" class="w3-container w3-theme-l1">
+    <button class="w3-button w3-hide-medium w3-hide-large" id="hamburger">
+        ☰
+    </button>
+    <a href="index.html">
+        <img src="images/logo.png" id="logo" alt="logo RobotTurtles" height="50px">
+    </a>
+</div>
+</div>
+
+<div class="w3-bar w3-theme-l1 w3-hide-small menu">
+    <a href="play.html" class="w3-bar-item w3-button">
+        <i class="menuIcon material-icons">games</i> <br>
+        Play
+    </a>
+    <a href="Howto.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">help</i> <br>
+        How to
+    </a>
+    <a href="About_us.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">supervised_user_circle</i> <br>
+        About us
+    </a>
+    <a href="Community.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">share</i> <br>
+        Community
+    </a>
+        <div class="w3-dropdown-hover w3-right">
+            <button class="w3-button" id="userButton">
+                <i class="material-icons w3-hide-small" id="userIcon">person</i>
+            </button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" id="dropdownContent">
+                <p class="w3-hide-small welcomeMessage">You're not logged in.</p>
+                <button id="openLogin" class="w3-button w3-bar-item">Log in</button>
+                <button id="openProfile" class="w3-button w3-bar-item w3-hide">Profile</button>
+                <button id="logoutButton" class="w3-button w3-bar-item w3-hide">Log out</button>
+                <button id="openRegister" class="w3-button w3-bar-item">Register</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MENU FOR MOBILE DEVICES -->
+
+<div id="menuLateral" class="w3-sidebar w3-bar-block w3-theme-l1 w3-hide-medium w3-hide-large">
+    <a href="play.html" class="w3-bar-item w3-button">
+        <i class="material-icons">games</i>
+        Play
+    </a>
+    <a href="Howto.html" class="w3-bar-item w3-button">
+        <i class="material-icons">help</i>
+        How to
+    </a>
+    <a href="About_us.html" class="w3-bar-item w3-button">
+        <i class="material-icons">supervised_user_circle</i>
+        About us
+    </a>
+    <a href="Community.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">share</i> <br>
+        Community
+    </a>
+    <hr>
+    <p class="welcomeMessage">You are not logged in.</p>
+    <button id="openLoginMobile" class="w3-bar-item w3-button">
+        <i class="material-icons">lock_open</i>
+        Log in
+    </button>
+    <button id="openProfileMobile" class="w3-bar-item w3-button w3-hide">
+        <i class="material-icons">person</i>
+        Profile
+    </button>
+    <button id="logoutButtonMobile" class="w3-bar-item w3-button w3-hide">
+        <i class="material-icons">lock</i>
+        Log out
+    </button>
+    <button id="openRegisterMobile" class="w3-bar-item w3-button">
+        <i class="material-icons">person_add</i>
+        Register
+    </button>
+</div>
+
+<!-- PAGE CONTENT STARTS HERE -->
+<div id="gameMainContainer">
+<!--CURRENT PLAYER-->
+    <div>
+    <div class="w3-card w3-white w3-hide" id="currentPlayerCard">
+        <div class="w3-container" id="currentPlayerContainer">
+            <h4>Current Player:</h4>
+            <img src="" alt="Turtle" class="w3-left" id="currentPlayerImage" height="50px">
+            <h2 id="currentPlayerLabel"></h2>
+            <h4>Play Time:</h4>
+            <span id="minutes"></span>:<span id="seconds"></span>
+        </div>
+    </div>
+
+    <!-- BOARD-->
+
+    <div class="w3-card w3-white w3-center w3-hide" id="boardCard">
+        <div id="boardContainer">
+            <table id="board">
+            </table>
+        </div>
+    </div>
+    <!-- BUTTONS-->
+    <div id="buttonContainer" class="w3-card w3-white w3-center w3-hide">
+        <button id="rotateLeft" class="w3-btn w3-amber"><img width="70px" height="70px"
+          src="images/buttons/left.jpg"></button>
+        <button id="rotateRight" class="w3-btn w3-deep-purple"><img width="70px" height="70px"
+          src="images/buttons/right.jpg"></button>
+        <button id="forward" class="w3-btn w3-indigo"><img width="70px" height="70px"
+          src="images/buttons/forward.jpg"></button>
+        <button id="laser" class="w3-btn w3-red"><img width="70px" height="70px"
+          src="images/buttons/laser.jpg"></button>
+        <button id="bug" class="w3-btn w3-brown" disabled><img width="70px" height="70px" src="images/buttons/bug.jpg">
+        </button>
+        <button id="endTurn" class="w3-btn w3-black" disabled><img width="70px" height="70px" src="images/buttons/endTurn.jpg">
+        </button>
+        <!--  SCORE TABLE -->
+    </div>
+        <div class="w3-center">
+            <button class="w3-button w3-white" id="endGame"><a href="play.html">Click here to play again!</a></button>
+        </div>
+            <div id="scoretable" class="w3-card w3-white w3-hide">
+                <table class="w3-table w3-striped w3-border">
+            </table>
+        </div>
+
+    </div>
+
+
+</div>
+
+<audio id="rotateaudio">
+  <source src="audio/rotate.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="forwardaudio">
+  <source src="audio/forward.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="bugaudio">
+  <source src="audio/bug.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="erroraudio">
+  <source src="audio/error.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="turtleaudio">
+  <source src="audio/turtle.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="stonewallaudio">
+  <source src="audio/stoneWall.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="icewallaudio">
+  <source src="audio/iceWall.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="crateaudio">
+  <source src="audio/crate.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="laseraudio">
+    <source src="audio/laser.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<audio id="wateraudio">
+  <source src="audio/water.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="borataudio">
+    <source src="audio/borat.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- PAGE CONTENT ENDS HERE -->
+
+<!-- PLAY MODAL -->
+<div id="playModal" class="w3-modal">
+    <div class="w3-modal-content">
+        <header class="w3-container w3-theme-l1">
+            <span class="w3-button w3-display-topright" id="goHome">×</span>
+            <h2>Play without Login!</h2>
+        </header>
+        <div class="w3-container">
+            <form id="nologinForm">
+                <div class="w3-section">
+                        <label>Username 1<br>
+                    <input type="text" name="u1name" class="w3-input w3-border w3-margin-bottom" placeholder="User1" id="u1name" required>
+                        </label>
+                        <label>Username 2<br>
+                    <input type="text" name="u2name" class="w3-input w3-border w3-margin-bottom" placeholder="User2" id="u2name" required>
+                        </label>
+                        <label>Username 3<br>
+                    <input type="text" name="u3name" class="w3-input w3-border w3-margin-bottom" placeholder="User3" id="u3name" required>
+                        </label>
+                    <label>Username 4<br>
+                    <input type="text" name="u4name" class="w3-input w3-border w3-margin-bottom" placeholder="User1" id="u4name" required>
+                        </label>
+                    <button id="nologbtn" class="w3-theme-l1 w3-btn-block w3-section w3-padding">PLAY!</button>
+
+                    </button>
+                </div>
+
+            </form>
+            </div>
+
+            <div class="w3-row">
+                <div class="w3-container w3-half">
+                    <h3>Login to play:</h3>
+                    <button class="w3-theme-l1 w3-btn-block w3-section w3-padding" id="openPlayLogin">Login</button>
+                </div>
+                <div class="w3-container w3-half">
+                    <h3>Register to play:</h3>
+                    <button class="w3-theme-l1 w3-btn-block w3-section w3-padding" id="openPlayRegister">Register</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- PLAY MODE MODAL-->
+<div id="playModeModal" class="w3-modal">
+    <div class="w3-modal-content">
+        <header class="w3-container w3-theme-l1">
+            <h2>Choose your play mode!</h2>
+        </header>
+            <div class="w3-row">
+                <div class="w3-container w3-third">
+                    <button class="w3-button">
+                        <img id="playIceWalls" alt="ice walls" src="images/game/modeplay/stonewall.png">
+                        <br>
+                        Stone Walls
+                    </button>
+                </div>
+                <div class="w3-container w3-third">
+                    <button class="w3-button w3-center">
+                        <img id="playStoneWalls" alt="stone walls" src="images/game/modeplay/icewall.png">
+                        <br>
+                        Ice Walls
+                    </button>
+                </div>
+                <div class="w3-container w3-third">
+                    <button class="w3-button w3-center" id="playCrates">
+                        <img src="images/content/crate.png" alt="Crates Mode">
+                        <br>
+                        Crates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- FOOTER: -->
+
+<div class="w3-container w3-center w3-theme-l1 w3-display-bottom footer">
+    © 2019 - Robot Turtles
+</div>
+
+
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="w3-modal">
+    <div class="w3-modal-content">
+        <header class="w3-container w3-theme-l1">
+            <span class="w3-button w3-display-topright" id="closeLogin">×</span>
+            <h2>Login</h2>
+        </header>
+
+        <div class="w3-container">
+            <form>
+                <div class="w3-section">
+                    <label>Username
+                        <input id="loginUser" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Username">
+                    </label>
+                    <label> Password
+                        <input id="loginPassword" class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Password">
+                    </label>
+                    <button id="loginButton" class="w3-theme-l1 w3-btn-block w3-section w3-padding">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="w3-modal">
+    <div class="w3-modal-content">
+        <header class="w3-container w3-theme-l1">
+            <span id="closeRegister" class="w3-button w3-display-topright">×</span>
+            <h2>Register</h2>
+        </header>
+
+        <div class="w3-container">
+            <form id="registerForm">
+                <div class="w3-section">
+                    <label>Username
+                        <input id="userName" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter your family username">
+                    </label>
+                    <label>Password
+                        <input id="password" class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password">
+                    </label>
+                    <label>Confirm Password
+                        <input id="confirmPassword" class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password">
+                    </label>
+                    <h5>Player 1</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player1Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player1Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <h5>Player 2</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player2Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player2Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <h5>Player 3</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player3Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player3Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <h5>Player 4</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player4Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player4Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <button id="registerButton" class="w3-theme-l1 w3-btn-block w3-section w3-padding">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

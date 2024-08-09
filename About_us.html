@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Robot Turtles</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+</head>
+
+<body class="w3-animate-opacity">
+
+<div id="logoBar" class="w3-container w3-theme-l1">
+    <button class="w3-button w3-hide-medium w3-hide-large" id="hamburger">
+        ☰
+    </button>
+    <a href="index.html">
+        <img src="images/logo.png" id="logo" alt="logo RobotTurtles" height="50px">
+    </a>
+</div>
+</div>
+
+<div class="w3-bar w3-theme-l1 w3-hide-small menu">
+    <a href="play.html" class="w3-bar-item w3-button">
+        <i class="menuIcon material-icons">games</i> <br>
+        Play
+    </a>
+    <a href="Howto.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">help</i> <br>
+        How to
+    </a>
+    <a href="About_us.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">supervised_user_circle</i> <br>
+        About us
+    </a>
+    <a href="Community.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">share</i> <br>
+        Community
+    </a>
+        <div class="w3-dropdown-hover w3-right">
+            <button class="w3-button" id="userButton">
+                <i class="material-icons w3-hide-small" id="userIcon">person</i>
+            </button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" id="dropdownContent">
+                <p class="w3-hide-small welcomeMessage">You're not logged in.</p>
+                <button id="openLogin" class="w3-button w3-bar-item">Log in</button>
+                <button id="openProfile" class="w3-button w3-bar-item">Profile</button>
+                <button id="logoutButton" class="w3-button w3-bar-item w3-hide">Log out</button>
+                <button id="openRegister" class="w3-button w3-bar-item">Register</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MENU FOR MOBILE DEVICES -->
+
+<div id="menuLateral" class="w3-sidebar w3-bar-block w3-theme-l1 w3-hide-medium w3-hide-large">
+    <a href="play.html" class="w3-bar-item w3-button">
+        <i class="material-icons">games</i>
+        Play
+    </a>
+    <a href="Howto.html" class="w3-bar-item w3-button">
+        <i class="material-icons">help</i>
+        How to
+    </a>
+    <a href="About_us.html" class="w3-bar-item w3-button">
+        <i class="material-icons">supervised_user_circle</i>
+        About us
+    </a>
+    <a href="Community.html" class="w3-bar-item w3-button">
+        <i class="material-icons menuIcon">share</i> <br>
+        Community
+    </a>
+    <hr>
+    <p class="welcomeMessage">You are not logged in.</p>
+    <button id="openLoginMobile" class="w3-bar-item w3-button">
+        <i class="material-icons">lock_open</i>
+        Log in
+    </button>
+    <button id="openProfileMobile" class="w3-bar-item w3-button">
+        <i class="material-icons">person</i>
+        Profile
+    </button>
+    <button id="logoutButtonMobile" class="w3-bar-item w3-button w3-hide">
+        <i class="material-icons">lock</i>
+        Log out
+    </button>
+    <button id="openRegisterMobile" class="w3-bar-item w3-button">
+        <i class="material-icons">person_add</i>
+        Register
+    </button>
+</div>
+
+<!-- PAGE CONTENT STARTS HERE -->
+<div id="aboutUsMainContainer">
+    <div class="w3-row">
+        <div class="w3-container">
+            <div class="w3-card w3-white" id="mainAboutUsCard">
+                <div class="w3-panel">
+                    <img src="images/content/dan_portait.jpg" height="100" alt="Photo of Dan Shapiro">
+                    <h3>Hi, I'm Dan!</h3>
+                    <p>I’m a software guy who’s been programming since my dad taught me how when I was 7.
+                        I invented Robot Turtles as I pondered these questions in the shower one morning:</p>
+                    <ol>
+                        <li>
+                            Why are kid games either pure luck (Candyland) or a
+                            frustrating exercise in trying to lose on purpose,
+                            without the child noticing (Tic-Tac-Toe)?
+                        </li>
+                        <li>
+                            How old does a child need to be to learn to program? (Do they even need to read?)
+                        </li>
+                        <li>
+                            What’s something cool I can do with my kids this afternoon?
+                        </li>
+                    </ol>
+                    <p>
+                        I got out of the shower, printed out some generic robot clip art,
+                        and told my 4-year-old twins that I had a new game for us to play.
+                        We started experimenting with the rules. The kids couldn’t get enough of it.
+                    </p>
+                    <p>
+                        I got so excited about this game that I took a leave of absence
+                        from my job at Google and spent the summer working full time to develop it.
+                    </p>
+                    <a href="https://www.danshapiro.com"><button class="w3-button w3-theme-l1">Follow me!</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE CONTENT ENDS HERE -->
+
+<!-- FOOTER: -->
+
+<div class="w3-container w3-center w3-theme-l1 footer">
+    © 2019 - Robot Turtles
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="w3-modal">
+    <div class="w3-modal-content">
+        <header class="w3-container w3-theme-l1">
+            <span class="w3-button w3-display-topright" id="closeLogin">×</span>
+            <h2>Login</h2>
+        </header>
+
+        <div class="w3-container">
+            <form>
+                <div class="w3-section">
+                    <label>Username
+                        <input id="loginUser" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Username">
+                    </label>
+                    <label> Password
+                        <input id="loginPassword" class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Password">
+                    </label>
+                    <button id="loginButton" class="w3-theme-l1 w3-btn-block w3-section w3-padding">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="w3-modal">
+    <div class="w3-modal-content">
+        <header class="w3-container w3-theme-l1">
+            <span id="closeRegister" class="w3-button w3-display-topright">×</span>
+            <h2>Register</h2>
+        </header>
+
+        <div class="w3-container">
+            <form id="registerForm">
+                <div class="w3-section">
+                    <label>Username
+                        <input id="userName" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter your family username">
+                    </label>
+                    <label>Password
+                        <input id="password" class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password">
+                    </label>
+                    <label>Confirm Password
+                        <input id="confirmPassword" class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Password">
+                    </label>
+                    <h5>Player 1</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player1Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player1Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <h5>Player 2</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player2Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player2Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <h5>Player 3</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player3Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player3Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <h5>Player 4</h5>
+                    <label> Name
+                        <input class="w3-input w3-border w3-margin-bottom" id="player4Name" type="text" placeholder="Enter username">
+                    </label>
+                    <label> Date of Birth
+                        <input class="w3-input w3-border w3-margin-bottom" id="player4Birth" class="w3-input w3-border w3-margin-bottom" type="date">
+                    </label>
+                    <button id="registerButton" class="w3-theme-l1 w3-btn-block w3-section w3-padding">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

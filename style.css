@@ -1,0 +1,223 @@
+#logoBar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#logo {
+    float: left;
+    margin-top: 5px;
+}
+
+#userWelcome {
+    margin-right: 5px;
+    margin-top: 15px;
+}
+
+#userIcon {
+    font-size: 50px;
+    text-align: right;
+}
+
+.menu i{
+    font-size: 50px;
+}
+
+.footer {
+    height: 30px;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.titleh2 {
+    padding-left: 5%;
+
+}
+.downl {
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.danbio {
+}
+
+.danphoto {
+    width: 100%;
+}
+
+.foto_collection {
+    padding-bottom: 60px;
+}
+
+#hamburger {
+    float: left;
+    margin-right: 10px;
+    top: 20px;
+    font-size: 30px;
+}
+
+#menuLateral {
+    display: none;
+    width: 100%;
+}
+
+.boardCell {
+    background-image: url("images/game/board/grass.jpg");
+    height: 50px;
+    width: 50px;
+}
+
+#dropdownContent {
+    right: 0;
+}
+
+.welcomeMessage {
+    padding-right: 20px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#loginContainer p {
+    padding-top: 2px;
+}
+
+#loginContainer button {
+    padding: 2px;
+}
+
+#hamburger {
+    float: left;
+    margin-right: 10px;
+    top: 20px;
+    font-size: 30px;
+}
+
+#menuLateral {
+    display: none;
+    width: 100%;
+}
+
+.grass {
+  background-image: url("images/game/tiles/grass.png");
+  height: 50px;
+  width: 50px;
+}
+
+.water {
+  background-image: url("images/game/tiles/water.png");
+  height: 50px;
+  width: 50px;
+}
+
+#rotateLeft {
+  display: none;
+}
+
+#rotateRight {
+  display: none;
+}
+
+#forward {
+  display: none;
+}
+
+#laser {
+  display: none;
+}
+
+#bug {
+  display: none;
+}
+
+#endTurn {
+  display: none;
+}
+
+#scoretable {
+  display: none;
+}
+
+#endGame {
+  display: none;
+}
+
+#endGame a {
+  text-decoration: none;
+}
+
+body, html {
+    height: 100%;
+}
+
+.mainContainer {
+    background-image: url("images/content/rtboard.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#aboutUsMainContainer {
+    background-image: url("images/content/dan.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mainAboutUsCard {
+    width: 85%;
+    margin: 10px auto;
+    padding: 4px;
+}
+
+#mainPageCard {
+    width: 50%;
+    margin: 10% auto;
+    padding: 4px;
+}
+
+#board {
+    table-layout: fixed;
+    height: 50px;
+}
+
+#boardCard {
+    width: 425px;
+    margin: auto;
+}
+
+#currentPlayerCard {
+    width: 425px;
+    margin: 10px auto 20px auto;
+    padding-bottom: 10px;
+}
+
+#gameMainContainer {
+    background-image: url("images/background.jpg");
+    height: 1100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#buttonContainer {
+    width: 425px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    background-image: url("images/wood.jpg");
+    background-size: 100px 100px;
+    background-repeat: repeat;
+}
+
+#scoretable {
+    width: 500px;
+    margin: 10px auto auto auto;
+}
